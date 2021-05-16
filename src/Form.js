@@ -19,6 +19,7 @@ class Form extends Component {
 
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        // this.props.addGrocery = this.props.addGrocery.bind(this)
     }
 
     handleSubmit(event) {
@@ -42,7 +43,7 @@ class Form extends Component {
         //passes grocery to the parent component
         // this.props.addGrocery(grocery)
 
-        this.props.addGrocery(grocery)
+        this.props.addGro(grocery);
     }
 
 
@@ -68,8 +69,20 @@ class Form extends Component {
 
     }
 
+    // in class components we usually destructure props and states in the render method
     render() {
         //<List list={this.state} />
+        // const {name, heroname} = this.props
+        // const {state1, state2} = this.state
+        // console.log(this.props)
+        // console.log(this.props.listprop)
+        // console.log(this.props.listprop.list[0])
+        // const [item1, item2] = this.props.listprop.list
+        // console.log(item1)
+        // console.log(item2)
+        // const [item1i] = item1
+        // console.log(item1i)
+
         return (
             // <form onSubmit = {this.handleSubmit}>
             //     <label>Item</label>
@@ -95,11 +108,19 @@ class Form extends Component {
 
                     <label>quantity</label>
                     <input type="text" value={this.state.quantity} onChange={this.handleChange} name="quantity"></input>
+
                     <button type="submit">submit</button>
                 </form>
 
                 <div>
-                   <List />
+                   {/* {item1.toString()} */}
+                   {/* {JSON.stringify(this.props.listprop.list)} */}
+
+                   {/* {
+                       Object.keys(this.props.listprop.list).map((key) => {
+                           return JSON.stringify(this.props.listprop.list[key])
+                       })
+                   } */}
                 </div>
 
             </div>

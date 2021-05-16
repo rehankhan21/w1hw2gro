@@ -24,7 +24,7 @@ class List extends Component{
         // this.arr = this.props
 
         this.list = this.list.bind(this)
-        this.addGocery = this.addGocery.bind(this)
+        this.addGro = this.addGro.bind(this)
 
         // const {item, units, quantity, isPurchased} = this.props;
         // console.log(this.props)
@@ -42,7 +42,7 @@ class List extends Component{
      // pass the new version of thje list with the new item
      // setting list to its newer version
      // push mutates an array, but slice mutates the copy and sets the state to the copy
-     addGocery = (item) => {
+     addGro = (item) => {
 
         //this.state.list.slice()
         let array = this.state.list.slice() //storing the copy inside of the new array
@@ -52,12 +52,14 @@ class List extends Component{
             list: array // made a copy of the list then pushed the new item to the copy of the list 
             // now we are setting list to its newer version with the new item added.
         })
+
+      
      }
 
 
     render() {
 
-        {console.log(this.item)}
+        //{console.log(this.item)}
         return (
             <div>
                 {/* //{this.arr} */}
@@ -74,6 +76,16 @@ class List extends Component{
                {/* <List addGocery = {this.addGocery}/> */}
                {//grocerylist
                 }
+                {/* {JSON.stringify(this.props.listprop.list)} */}
+                {/* {JSON.stringify(this.state)} */}
+                {
+                       Object.keys(this.state).map((key) => {
+                           return JSON.stringify(this.state[key])
+                       })
+                }
+                <div>
+                    <Form addGro = {this.addGro}/>
+                </div>
             </div>
         )
     }

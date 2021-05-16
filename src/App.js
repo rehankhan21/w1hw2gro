@@ -13,14 +13,14 @@ class App extends Component {
     this.state = {
       list: [
         {
-          items: "",
+          item: "",
           units: "",
           quantity: 0,
           isPurchased: false
         },
 
         {
-          items: "",
+          item: "",
           units: "",
           quantity: "",
           isPurchased: false
@@ -34,7 +34,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Form />
+        <List listprop = {this.state}/>
         {/* <List /> */}
       </div>
     )
