@@ -8,15 +8,15 @@ class List extends Component{
 
         this.state = {
             list: [
-                {items: "",
-                units: "",
-                quantity: 0,
-                isPurchased: false},
+                {items: "apple",
+                units: "1 lb",
+                quantity: 21,
+                isPurchased: true},
 
                 {items: "",
                 units: "",
                 quantity: 0,
-                isPurchased: false}
+                isPurchased: true}
 
             ]
         }
@@ -58,8 +58,11 @@ class List extends Component{
 
 
     render() {
-
         //{console.log(this.item)}
+        const items = []
+        for(const [index, value] of this.state.list.entries()) {
+            items.push(<li key={index}>{value}</li>)
+        }
         return (
             <div>
                 {/* //{this.arr} */}
@@ -78,11 +81,36 @@ class List extends Component{
                 }
                 {/* {JSON.stringify(this.props.listprop.list)} */}
                 {/* {JSON.stringify(this.state)} */}
-                {
+                {/* {
                        Object.keys(this.state).map((key) => {
                            return JSON.stringify(this.state[key])
                        })
+                } */}
+                 {
+                       Object.keys(this.state).map((key) => {
+                            let [obj1, obj2, ...rest] = this.state[key]
+
+                            if(rest.isPurchased) {
+                                return (
+                                <p>item: {JSON.stringify(rest)}</p>
+                                // JSON.stringify(obj1)
+                                )
+                            }
+                            
+                       })
                 }
+
+                {
+            
+                }
+
+                {/* {JSON.stringify(this.state.list)} */}
+                <ul>
+                    
+                    {this.state.list.map((value, index) => {
+                        return <li key={index}>{JSON.stringify(value)}</li>
+                    })}
+                </ul>
                 <div>
                     <Form addGro = {this.addGro}/>
                 </div>
