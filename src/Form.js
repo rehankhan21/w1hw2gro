@@ -35,7 +35,7 @@ class Form extends Component {
         //we need a fucntionm in parent compoenent to take this data
         // 
         let grocery = {
-            item: this.state.item,
+            items: this.state.item,
             units: this.state.units,
             quantity: this.state.quantity,
             isPurchased: this.state.isPurchased
